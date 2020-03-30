@@ -16,12 +16,12 @@ This project currently implements the multi-player multi-armed bandit (MP-MAB) a
 
 This Python package contains the following modules:
 
-Simulation entrances: main_MPMAB.py and main_MPMAB_IoT_Simu.py
-Simulation engine: GameEvaluator.py
-Environment generator: MPMAB.py (for known distribution) and HetNetSimulator.py (for a home-brewed IoT HetNet environment)
-Algorithm organizer: MABAlgorithms.py and MABAlgorithms2.py
-Player simulator: Players.py and Players2.py
-Arm simulator for known distribution: Arms.py
+1. Simulation entrances: main_MPMAB.py and main_MPMAB_IoT_Simu.py
+2. Simulation engine: GameEvaluator.py
+3. Environment generator: MPMAB.py (for known distribution) and HetNetSimulator.py (for a home-brewed IoT HetNet environment)
+4. Algorithm organizer: MABAlgorithms.py and MABAlgorithms2.py
+5. Player simulator: Players.py and Players2.py
+6. Arm simulator for known distribution: Arms.py
 Result recorder: PlayResult.py
 Miscellaneous utilities: plotutils.py, envutils.py, loggingutils.py
 Configurations for simulation: simu_config.py
