@@ -1,4 +1,5 @@
 #MP-MAB
+
 This repository contains the Python codes for the numerical simulations of the following paper:
 
 [Wang2020] Wenbo Wang, Amir Leshem, Dusit Niyato and Zhu Han, "Decentralized Learning for Channel Allocation in IoT Networks over Unlicensed Bandwidth as a Contextual Multi-player Multi-armed Bandit Game".
