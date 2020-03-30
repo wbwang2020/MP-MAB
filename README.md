@@ -22,10 +22,14 @@ This Python package contains the following modules:
 1. Simulation entrances: main_MPMAB.py and main_MPMAB_IoT_Simu.py
 2. Configurations for simulation: simu_config.py
 3. Simulation engine: GameEvaluator.py
+   
   1. Environment generator: MPMAB.py (for known distribution) and HetNetSimulator.py (for a home-brewed IoT HetNet environment)
+     
     1. Arm simulator for known distribution: Arms.py
   2. Algorithm organizer: MABAlgorithms.py and MABAlgorithms2.py
+     
     1. Player simulator: Players.py and Players2.py
     2. Result recorder: PlayResult.py
+   
 4. Miscellaneous utilities: plotutils.py, envutils.py, loggingutils.py
 
