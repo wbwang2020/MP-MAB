@@ -14,22 +14,17 @@ This project currently implements the multi-player multi-armed bandit (MP-MAB) a
 
 [[Sumit2019](https://ieeexplore.ieee.org/document/8792108)] Sumit J. Darak and Manjesh K. Hanawal, "Multi-player multi-armed bandits for stable allocation in # heterogeneous ad-hoc networks", IEEE JSAC oct. 2019.\
 
-We also aim to extend this package with more MP-MAB algorithms. 
+We also aim to extend this package with more MP-MAB algorithms.
 
 ## Main Structure
 This Python package contains the following modules:
 
 1. Simulation entrances: main_MPMAB.py and main_MPMAB_IoT_Simu.py
 2. Configurations for simulation: simu_config.py
-3. Simulation engine: GameEvaluator.py
-   
-  1. Environment generator: MPMAB.py (for known distribution) and HetNetSimulator.py (for a home-brewed IoT HetNet environment)
-     
-    1. Arm simulator for known distribution: Arms.py
+3. Simulation engine: GameEvaluator.py   
+  1. Environment generator: MPMAB.py (for known distribution) and HetNetSimulator.py (for a home-brewed IoT HetNet environment)   
+    - Arm simulator for known distribution: Arms.py
   2. Algorithm organizer: MABAlgorithms.py and MABAlgorithms2.py
-     
-    1. Player simulator: Players.py and Players2.py
-    2. Result recorder: PlayResult.py
-   
+    - Player simulator: Players.py and Players2.py
+    - Result recorder: PlayResult.py
 4. Miscellaneous utilities: plotutils.py, envutils.py, loggingutils.py
-
