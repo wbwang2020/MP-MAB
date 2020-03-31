@@ -2,11 +2,11 @@
 ## Purpose of This Package:
 This repository contains the Python codes for the numerical simulations of the following paper:
 
-[[Wang2020](https://arxiv.org/submit/3107880)] Wenbo Wang, Amir Leshem, Dusit Niyato and Zhu Han, "Decentralized Learning for Channel Allocation in IoT Networks over Unlicensed Bandwidth as a Contextual Multi-player Multi-armed Bandit Game".
+[[Wang2020](http://arxiv.org/abs/2003.13314)] Wenbo Wang, Amir Leshem, Dusit Niyato and Zhu Han, "Decentralized Learning for Channel Allocation in IoT Networks over Unlicensed Bandwidth as a Contextual Multi-player Multi-armed Bandit Game".
 
 This project currently implements the multi-player multi-armed bandit (MP-MAB) algorithms proposed in the following papers:
 
-[[Wang2020](https://arxiv.org/submit/3107880)] Wenbo Wang, Amir Leshem, Dusit Niyato and Zhu Han, "Decentralized Learning for Channel Allocation in IoT Networks over Unlicensed Bandwidth as a Contextual Multi-player Multi-armed Bandit Game".
+[[Wang2020](http://arxiv.org/abs/2003.13314)] Wenbo Wang, Amir Leshem, Dusit Niyato and Zhu Han, "Decentralized Learning for Channel Allocation in IoT Networks over Unlicensed Bandwidth as a Contextual Multi-player Multi-armed Bandit Game".
 
 [[Rosenski2016](http://proceedings.mlr.press/v48/rosenski16.pdf)] Rosenski, J., Shamir, O., & Szlak, L. (2016, June). Multi-player bandits–a musical chairs approach. In International Conference on Machine Learning (pp. 155-163).
 
