@@ -1,4 +1,4 @@
-# MP-MAB
+﻿# Contextual Multi-Player Multi-Armed Bandit (MP-MAB)
 ## Purpose of This Package:
 This repository contains the Python codes for the numerical simulations of the following paper:
 

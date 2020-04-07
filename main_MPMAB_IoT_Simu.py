@@ -157,7 +157,8 @@ if __name__ == '__main__':
                   'context_prob': {'context 1': 2, 'context 2': 1, 'context 3': 1},
                   'los_prob':  {'context 1': 1.5, 'context 2': 2, 'context 3': 1}
                   }
-        
+            
+    start_time = time.time()# record the starting time of the simulation, start simulations
     # generate the arm-value sequence for only once
     alg_engine = AlgEvaluator(env_config)  
     alg_engine.prepare_arm_samples()
@@ -166,7 +167,6 @@ if __name__ == '__main__':
     game_config.alg_types = ['Musical Chairs', 'SOC', 'Trial and Error', 'Game of Thrones'] #, 
   
     # beginning of the game
-    start_time = time.time()# record the starting time of the simulation, start simulations
     data_frame = []
     for player_no in player_numbers:        
         num_players = int(player_no)
@@ -177,9 +177,9 @@ if __name__ == '__main__':
         
         game_config.alg_configs = [None,
                                   {"delta": 0.02, "exploration_time": 4000},
-                                  {"c1": 2000, "c2": 10000,"c3":3000, "epsilon": 0.01, "delta": 2, "xi": 0.001, 
+                                  {"c1": 3000, "c2": 200*num_players,"c3":200*num_players, "epsilon": 0.01, "delta": 2, "xi": 0.001, 
                                                      "alpha11": alpha11, "alpha12": alpha12, "alpha21": -0.39, "alpha22": 0.4,},
-                                  {"c1": 2000, "c2": 10000,"c3":3000, "epsilon": 0.01, "delta": 1.5},                                 
+                                  {"c1": 3000, "c2": 200*num_players,"c3":200*num_players, "epsilon": 0.01, "delta": 1.5},                                 
                                   ]  
         
         #set the arm number to be used in the simulation
