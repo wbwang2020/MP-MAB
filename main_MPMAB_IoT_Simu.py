@@ -139,7 +139,7 @@ if __name__ == '__main__':
         else:
            print("Please respond with 'yes' or 'no'")
     
-    game_horizon = 400000
+    game_horizon = 500000
     simu_rounds = 40
   
     max_player_no = 30 # the more nodes we have, the longer horizon we need for find a social-optimal allocation.
@@ -160,12 +160,14 @@ if __name__ == '__main__':
             
     start_time = time.time()# record the starting time of the simulation, start simulations
     # generate the arm-value sequence for only once
+    print("Simulating network environment sequence...")
     alg_engine = AlgEvaluator(env_config)  
     alg_engine.prepare_arm_samples()
         
     game_config = Section("Simulation of HetNet: reward evolution for 4 algorithms")    
     game_config.alg_types = ['Musical Chairs', 'SOC', 'Trial and Error', 'Game of Thrones'] #, 
   
+    print("Producing channel allocation sequences...")
     # beginning of the game
     data_frame = []
     for player_no in player_numbers:        
@@ -175,11 +177,14 @@ if __name__ == '__main__':
         alpha11 = -0.40/num_players
         alpha12 = 0.45/num_players
         
+        # the value of c2 and c3 determines the performance of the TnE and GoT algorithms.
+        # make sure that they increase properly with the size of the network
+        # for example, with 300*num_players the TnE will have roughly the same performance as Musical Chairs and Stable Orthorgonal Channel (SOC) allocation 
         game_config.alg_configs = [None,
                                   {"delta": 0.02, "exploration_time": 4000},
-                                  {"c1": 3000, "c2": 200*num_players,"c3":200*num_players, "epsilon": 0.01, "delta": 2, "xi": 0.001, 
-                                                     "alpha11": alpha11, "alpha12": alpha12, "alpha21": -0.39, "alpha22": 0.4,},
-                                  {"c1": 3000, "c2": 200*num_players,"c3":200*num_players, "epsilon": 0.01, "delta": 1.5},                                 
+                                  {"c1": 4000, "c2": 600*num_players,"c3":600*num_players, "epsilon": 0.01, "delta": 2, "xi": 0.001, 
+                                                     "alpha11": alpha11, "alpha12": alpha12, "alpha21": -0.039, "alpha22": 0.04,},
+                                  {"c1": 4000, "c2": 600*num_players,"c3":600*num_players, "epsilon": 0.01, "delta": 1.5},                                 
                                   ]  
         
         #set the arm number to be used in the simulation
