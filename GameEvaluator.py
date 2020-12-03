@@ -36,6 +36,7 @@ from HetNetSimulator import HomeBrewedHetNetEnv
 #import algorithms
 from MABAlgorithms import Hungarian, StaticHungarian, MusicalChairs, TrialandError, GameofThrone
 from MABAlgorithms2 import SOC
+from MABAlgorithms3 import SICMMAB
 
 from loggingutils import info_logger
 
@@ -197,6 +198,18 @@ class AlgEvaluator:
             result_MC = ResultMultiPlayers(algo_type, 
                                            self.context_set, self.nbPlayers, self.nbArms, self.horizon)
             self.result_recorders.append(result_MC)
+            
+            self.alg_names.append(algo_type)
+        
+        elif algo_type == 'SIC-MMAB': #str(SICMMB)
+            alg_params["horizon"] = self.horizon
+            alg_SICMMAB = SICMMAB(alg_params)
+            self.algorithms.append(alg_SICMMAB)
+            
+            # to record the learning results of alg_MC
+            result_SICMMAB = ResultMultiPlayers(algo_type, 
+                                           self.context_set, self.nbPlayers, self.nbArms, self.horizon)
+            self.result_recorders.append(result_SICMMAB)
             
             self.alg_names.append(algo_type)
             
