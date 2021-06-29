@@ -59,9 +59,10 @@ ENV_SCENARIO_1.env_config = {'horizon': ENV_SCENARIO_1.game_horizon,
 ENV_SCENARIO_1.enable_regret_simulation = True
 ENV_SCENARIO_1.enable_reward_simulation = True
 
-ENV_SCENARIO_1.alg_types = ['Static Hungarian', 'Musical Chairs', 'Trial and Error']
-ENV_SCENARIO_1.alg_configs = [None, None, {"c1": 100, "c2": 200,"c3":100, "epsilon": 0.01, "delta": 2, "xi": 0.001, 
-                                                 "alpha11": -0.12, "alpha12": 0.15, "alpha21": -0.35, "alpha22": 0.4,}]
+ENV_SCENARIO_1.alg_types = ['Static Hungarian', 'Musical Chairs', 'ESE', 'SIC-MMAB', 'Trial and Error', 'Game of Thrones'] # 
+ENV_SCENARIO_1.alg_configs = [None, None, None, None, {"c1": 500, "c2": 1000,"c3":1000, "epsilon": 0.01, "delta": 2, "xi": 0.001, 
+                                                 "alpha11": -0.12, "alpha12": 0.15, "alpha21": -0.35, "alpha22": 0.4,},
+                              {"c1": 500, "c2": 1000,"c3":1000, "epsilon": 0.01, "delta": 2}]
                              
 # Experiment parameters
 ENV_SCENARIO_1.T_start = 5000

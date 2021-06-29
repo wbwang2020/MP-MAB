@@ -236,7 +236,7 @@ if __name__ == '__main__':
 
     if args.id is None:
         # default choice of configuration for a simulation
-        game_config = CONFIG.ENV_SCENARIO_7 # 
+        game_config = CONFIG.ENV_SCENARIO_1_PARALLEL # 
     else:
         if args.id in CONFIG.CONFIGURATION_DICT.keys():
             game_config =  CONFIG.CONFIGURATION_DICT[args.id]

@@ -31,7 +31,7 @@ if __name__ == '__main__':
     exit(0)
 
 """
- Algorithm: centralized Hungarian
+ Algorithm: stable orthogonal allocation (SOC)
 """    
 class SOC(MABAlgorithm):
     """ 
@@ -87,7 +87,7 @@ class SOC(MABAlgorithm):
             agent.reset()
 
     def learn_policy(self, game_env, context=None, time=None):
-        # context is not used in Hungarian
+        # context is not used in SOC
         (nbPlayer, nbArm) = np.shape(game_env)
         assert nbPlayer == self.nbPlayer and nbArm == self.nbArm, "input does not match the stored environment parameters."
         assert nbPlayer <= nbArm, "player number should be larger than or equal to arm number."

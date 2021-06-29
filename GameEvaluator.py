@@ -38,6 +38,8 @@ from MABAlgorithms import Hungarian, StaticHungarian, MusicalChairs, TrialandErr
 from MABAlgorithms2 import SOC
 from MABAlgorithms3 import SICMMAB
 
+from MABAlgorithms2a import ESE
+
 from loggingutils import info_logger
 
 # result recorder
@@ -296,11 +298,23 @@ class AlgEvaluator:
             alg_SOC = SOC(alg_params)
             self.algorithms.append(alg_SOC)
             
-            result_GoT = ResultMultiPlayers(algo_type, 
+            result_SOC = ResultMultiPlayers(algo_type, 
                                             self.context_set, self.nbPlayers, self.nbArms, self.horizon) 
-            self.result_recorders.append(result_GoT)
+            self.result_recorders.append(result_SOC)
             
             self.alg_names.append(algo_type) # use the full name of 'Stable Orthogonal Allocation'
+        elif algo_type == "ESE":
+            alg_params["delta_R"] = custome_params["delta_R"] if custome_params is not None else 0.1
+            
+            alg_ESE = ESE(alg_params)
+            self.algorithms.append(alg_ESE)
+            
+            result_ESE = ResultMultiPlayers(algo_type, 
+                                            self.context_set, self.nbPlayers, self.nbArms, self.horizon) 
+            self.result_recorders.append(result_ESE)
+            
+            self.alg_names.append(algo_type) # use the full name of 'Stable Orthogonal Allocation'
+            
         else:
              #TODO: add other algorithms here
              print("The algorithm type '{}' is not identified".format(algo_type))    

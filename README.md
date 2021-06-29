@@ -1,10 +1,10 @@
 ﻿# Contextual Multi-Player Multi-Armed Bandit (MP-MAB)
 ## Purpose of This Package:
-This repository contains the Python codes for the numerical simulations of the following paper:
+This repository contains the Python codes for the numerical simulations of the following paper (we also aim to extend this package with more MP-MAB algorithms in the future):
 
 [[Wang2020](http://arxiv.org/abs/2003.13314)] Wenbo Wang, Amir Leshem, Dusit Niyato and Zhu Han, "Decentralized Learning for Channel Allocation in IoT Networks over Unlicensed Bandwidth as a Contextual Multi-player Multi-armed Bandit Game".
 
-This project currently implements the multi-player multi-armed bandit (MP-MAB) algorithms proposed in the following papers:
+This project currently implements the multi-player multi-armed bandit (MP-MAB) algorithms proposed in the following (preprint) papers:
 
 [[Wang2020](http://arxiv.org/abs/2003.13314)] Wenbo Wang, Amir Leshem, Dusit Niyato and Zhu Han, "Decentralized Learning for Channel Allocation in IoT Networks over Unlicensed Bandwidth as a Contextual Multi-player Multi-armed Bandit Game".
 
@@ -14,20 +14,30 @@ This project currently implements the multi-player multi-armed bandit (MP-MAB) a
 
 [[Sumit2019](https://ieeexplore.ieee.org/document/8792108)] Sumit J. Darak and Manjesh K. Hanawal, "Multi-player multi-armed bandits for stable allocation in # heterogeneous ad-hoc networks", IEEE JSAC oct. 2019.
 
-[[Boursier2019](https://papers.nips.cc/paper/2019/file/c4127b9194fe8562c64dc0f5bf2c93bc-Paper.pdf)] E. Boursier and V. Perchet, "Sic-mmab: synchronisation involves communication in multiplayer multi-armed bandits," in Advances in Neural Information Processing Systems, Vancouver CANADA, Dec. 2019, pp. 12 071–12 080.
+[[Tibrewal2019](https://arxiv.org/abs/1901.03868)] Tibrewal, H., Patchala, S., Manjesh K. Hanawal and Sumit J. Darak (2019). "Multiplayer multiarmed bandits for optimal assignment in heterogeneous networks," arXiv preprint arXiv:1901.03868.
 
-We also aim to extend this package with more MP-MAB algorithms.
+**Note**: [Tibrewal2019] is provided as an alternative algorithm for comparison with [Sumit2019].
 
 ## Main Structure
 This Python package contains the following modules:
 
 1. Simulation entrances: main_MPMAB.py and main_MPMAB_IoT_Simu.py
+
 2. Configurations for simulation: simu_config.py   
+  - We suggest the simulations to be run in the parallel mode for a small size of network and non-parallel mode for larger network (due to possible memory limits).
 
 3. Simulation engine: GameEvaluator.py   
-  - Environment generator: MPMAB.py (for known distribution) and HetNetSimulator.py (for a home-brewed IoT HetNet environment)   
-    - Arm simulator for known distribution: Arms.py   
-  - Algorithm organizer: MABAlgorithms.py, MABAlgorithms2.py, MABAlgorithms3.py
-    - Player simulator: Players.py, Players2.py, Players3.py
-    - Result recorder: PlayResult.py
+
+  - Environment generator:
+    - MPMAB.py: MAB environment simulator for known distribution of the arm values,
+    - HetNetSimulator.py: for a home-brewed IoT HetNet environment,
+    - Arms.py: arm simulator for known distribution.
+  - Algorithm organizer:
+    - MABAlgorithms.py: implementations of the centralized Hugarian algorithm, [Wang2020] (TrialandError), [Rosenski2016] (MusicalChairs) and [Bistritz2018] (GameofThrone),
+    - MABAlgorithms2.py: implementations of [Sumit2019] (SOC),
+    - MABAlgorithms2a.py: implementations of[Tibrewal2019] (ESE, cf. SOC).
+  - Player simulator:
+    - Players.py, Players2.py and Players2a.py: the player simulators corresponding to different MABAlgorithms*.py files
+  - Result recorder: PlayResult.py
+
 4. Miscellaneous utilities: plotutils.py, envutils.py, loggingutils.py
